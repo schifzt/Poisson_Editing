@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf8">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+    <title>PoissonEdit</title>
+    <link rel="stylesheet" href="css/tingle.min.css">
+    <link rel="stylesheet" href="css/earth.css">
+</head>
+
+
+<body>
+    <div id="container" , class="tingle-content-wrapper">
+        <nav>
+            <ul class="navi">
+                <li id="title">
+                    Poisson<br> Image<br> Blending
+                </li>
+                <div id="buttons">
+                    <li><a class="button" id="reset" onclick="reset()">reset</a></li>
+                    <li><a class="button" id="save" onclick="save()" download="download.png">save</a></li>
+                    <li><a class="button" id="help" onclick="modal.open()">?</a></li><br>
+                    <li><a class="button" onclick="poissonImporting(0)">import</a></li>
+                    <li><a class="button" onclick="poissonImporting(1)">mix</a></li>
+                    <li><a class="button" onclick="inverseRGB()">inverse</a></li>
+                </div>
+            </ul>
+        </nav>
+
+        <ul class="main">
+            <li>
+                <canvas id="dest" width="270" height="270" style="border:2px solid"></canvas><br>
+                <input type="file" name="dest_file" id="dest_file">
+            </li>
+            <li>
+                <div id="plus">+</div>
+            </li>
+            <li>
+                <canvas id="src" width="270" height="270" style="border:2px solid"></canvas><br>
+                <input type="file" name="src_file" id="src_file">
+            </li>
+            <li>
+                <div id="equal">=</div>
+            </li>
+            <li>
+                <canvas id="result" width="270" height="270" style="border:2px solid"></canvas>
+            </li>
+        </ul>
+    </div>
+
+    <!-- help content -->
+    <div hidden id="help_content">
+        <h1>How to play</h1>
+        <ol>
+            <li>
+                <h3>Select two images.</h3>
+                <ul>
+                    <li>left: a base image</li>
+                    <li>middle: an image mixed with a base image (left image)</li>
+                    <li>right: a blended result image</li>
+                </ul>
+                <img src="img/help1.png" ,alt="help1">
+            </li>
+            <li>
+                <h3>On the middle image, select blended area (colored with light blue).</h3>
+                <img src="img/help2.png" ,alt="help2">
+            </li>
+            <li>
+                <h3>Double Click on the middle, then selected area will appear in the right image. You can adjust its position by dragging.</h3>
+                <img src="img/help3.png" ,alt="help3">
+            </li>
+            <li>
+                <h3>Finally, blend the images.</h3>
+                <ul>
+                    <li>import: suited for images like faces etc.</li>
+                    <li>mix: suited for non-edge images like sky, characters etc.</li>
+                </ul>
+                <img src="img/help4.png" ,alt="help4">
+            </li>
+        </ol>
+        <h3>Buttons</h3>
+        <div style="display:inline-block; padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px;">
+            Note: Reload pages to change images.
+        </div>
+        <ul>
+            <li>reset: Reset selected area (not clear canvases).</li>
+            <li>save: Save a result image (right canvas).</li>
+        </ul>
+        <img src="img/help5.png" ,alt="help5">
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+    <script src="js/jquery.hammer.js"></script>
+    <script src="js/tingle.min.js"></script>
+    <script src="js/help.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var agent = navigator.userAgent;
+            if (agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1 || agent.search(/iPod/) != -1 || agent.search(/Android/) != -1) {
+                // mobile
+                $.ajax({
+                    url: "./js/main_mobile.js",
+                    dataType: "script",
+                    cache: false
+                });
+            } else {
+                // pc
+                $.ajax({
+                    url: "./js/main_pc.js",
+                    dataType: "script",
+                    cache: false
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

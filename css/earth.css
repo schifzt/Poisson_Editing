@@ -1,0 +1,98 @@
+body {
+    color: #006A6D;
+    background: #EBE9E2;
+    font-family: 'Merriweather', serif;
+    font-size: 13px;
+    -webkit-user-select: none;
+}
+
+.navi {
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+}
+
+#title {
+    color: #006A6D;
+    font-family: 'Yu Gothic';
+    font-size: 40px;
+}
+
+#buttons {
+    position: relative;
+    top: 70px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    display: inline-block;
+}
+
+ul.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    /* position: relative; */
+    /* top: 50px; */
+    margin: 0px 40px;
+}
+
+#plus,
+#equal {
+    font-size: 90px;
+    font-family: 'Yu Gothic';
+    color: #006A6D;
+
+    /* position: relative; */
+    /* bottom: 50px; */
+}
+
+.button {
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Yu Gothic';
+
+    color: #020200;
+    background: #d4dbba;
+
+    border: solid 1px #006A6D;
+    border-radius: 3px;
+
+    padding: 2px 20px;
+    margin: 10px 100px;
+
+    cursor: pointer;
+}
+.button#reset{
+    background: #c6c5be;
+}
+
+.button#save{
+    background: #adc4db;
+}
+
+.button#debug{
+    background: #C7CD51;
+}
+
+.button:active {
+    color: #ffffff;
+    /* background: #636864; */
+}
+
+/* #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    margin: 5px 0;
+
+    color: inherit;
+    border-top: 1px solid #aaa;
+} */
