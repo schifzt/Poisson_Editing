@@ -6,18 +6,16 @@ The demo is <a href="https://schifzt.github.io/Poisson_Editing/" target="_blank"
 
 ![screenshot](https://user-images.githubusercontent.com/26299162/59612876-d0ef3d00-9158-11e9-999d-171024970e8e.gif)
 
-## Detail
-
-#### Features
+## Features
 + simple UI like drag ang drop selecting
 + auto image-size formatting
 
-#### Dependencies
+## Thanks
+This code was written in reference to https://takuti.me/note/poisson-image-blending .<br>Thank the Author for the nice program and the article.
+
+## Dependencies
 + hammer.js
 + tingle.js
-
-#### Thanks
-This code was written in reference to https://takuti.me/note/poisson-image-blending .<br>Thank the Author for the nice program and the article.
 
 ## Usage
 1. select images
